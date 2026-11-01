@@ -48,9 +48,3 @@
     docker compose -p own-mon -f compose.monitoring.yml down -v
     docker compose -p own-app -f compose.app.yml down -v
     docker network rm safeboard
-
-## Ограничения
-
-- Пароли в файлах демонстрационные, для локального стенда. Для реального использования их нужно вынести в `.env`.
-- На Docker Desktop с включённым containerd image store cAdvisor не подписывает контейнеры именами, поэтому на графике памяти контейнеров они показаны коротким ID (сопоставление: `docker ps --format '{{.ID}} {{.Names}}'`).
-- На macOS node-exporter показывает ресурсы виртуальной машины Docker Desktop, а не самого Mac.
